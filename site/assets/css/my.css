@@ -1966,3 +1966,8 @@ button#catapultCookie {
 .search-live div.search-live-results {
 	z-index: 10000;
 }
+.contacts-grid {
+	display: grid;
+	grid-template-columns: 300px 1fr;
+	grid-gap: 30px;
+}

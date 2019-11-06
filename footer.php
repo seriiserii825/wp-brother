@@ -73,36 +73,6 @@
 				<?php endif; ?>
             </li>
         </ul>
-
-		<?php $products_page = new WP_Query( [ 'page_id' => 16 ] ); ?>
-		<?php if ( $products_page->have_posts() ): ?>
-			<?php $products_page->the_post(); ?>
-            <h3 class="main-footer__title"><?php the_title(); ?></h3>
-			<?php wp_reset_postdata(); ?>
-		<?php endif; ?>
-
-        <ul class="main-footer__list">
-            <li>
-	            <?php $product_page_sewing = new WP_Query( [ 'page_id' => 107 ] ); ?>
-	            <?php if ( $product_page_sewing->have_posts() ): ?>
-		            <?php $product_page_sewing->the_post(); ?>
-                    <a class="tooltip"
-                       title="<?php echo carbon_get_the_post_meta( 'crb_product_page_link_title' . get_lang() ); ?>"
-                       href="<?php the_permalink(); ?>"><?php echo carbon_get_the_post_meta('crb_where_to_buy_title'.get_lang()); ?></a>
-		            <?php wp_reset_postdata(); ?>
-	            <?php endif; ?>
-            </li>
-            <li>
-	            <?php $product_page_sewing = new WP_Query( [ 'page_id' => 112 ] ); ?>
-	            <?php if ( $product_page_sewing->have_posts() ): ?>
-		            <?php $product_page_sewing->the_post(); ?>
-                    <a class="tooltip"
-                       title="<?php echo carbon_get_the_post_meta( 'crb_product_page_link_title' . get_lang() ); ?>"
-                       href="<?php the_permalink(); ?>"><?php echo carbon_get_the_post_meta('crb_where_to_buy_title'.get_lang()); ?></a>
-		            <?php wp_reset_postdata(); ?>
-	            <?php endif; ?>
-            </li>
-        </ul>
     </div>
     <div class="main-footer__item">
 	    <?php $products_page = new WP_Query( [ 'page_id' => 19 ] ); ?>
@@ -123,24 +93,11 @@
     <div class="main-footer__item">
 <!--        Translate - Title-->
         <h3 class="main-footer__title"><?php echo carbon_get_theme_option('crb_about_footer_title'.get_lang()); ?></h3>
-        <?php wp_nav_menu( [
-        	'theme_location'  => 'menu-about',
-        	'menu'            => '',
-        	'container'       => '',
-        	'container_class' => '',
-        	'container_id'    => '',
-        	'menu_class'      => 'main-footer__list',
-        	'menu_id'         => '',
-        	'echo'            => true,
-        	'fallback_cb'     => 'wp_page_menu',
-        	'before'          => '',
-        	'after'           => '',
-        	'link_before'     => '',
-        	'link_after'      => '',
-        	'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-        	'depth'           => 0,
-        	'walker'          => '',
-        ] ); ?>
+        <ul class="main-footer__list">
+            <li>
+                <a href="<?php echo get_page_link(517); ?>"><?php echo get_the_title(517); ?></a>
+            </li>
+        </ul>
     </div>
     <div class="main-footer__item">
 <!--        Translate - Titles - Footer links-->
